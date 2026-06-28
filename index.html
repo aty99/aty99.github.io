@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mohamed Ahmed Abdel Aty — Mobile Developer Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0d1117;
+    --ink-soft:#1c2330;
+    --paper:#f7f8fa;
+    --card:#ffffff;
+    --line:#e6e9ef;
+    --brand:#2f5bea;
+    --brand-deep:#1f3864;
+    --accent:#16b364;
+    --muted:#5b6472;
+    --muted-soft:#8a93a3;
+    --radius:18px;
+    --shadow:0 1px 2px rgba(13,17,23,.04),0 8px 24px rgba(13,17,23,.06);
+    --shadow-lift:0 6px 14px rgba(13,17,23,.08),0 18px 48px rgba(13,17,23,.12);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Inter',system-ui,sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+
+  /* HERO */
+  header.hero{
+    background:
+      radial-gradient(1200px 500px at 80% -10%,rgba(47,91,234,.16),transparent 60%),
+      radial-gradient(900px 500px at 0% 0%,rgba(22,179,100,.10),transparent 55%),
+      linear-gradient(180deg,#0d1117,#161c28);
+    color:#fff;
+    padding:64px 0 130px;
+    position:relative;
+    overflow:hidden;
+  }
+  .eyebrow{
+    font-family:'Sora',sans-serif;
+    font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;
+    color:#9db4ff;font-weight:600;margin-bottom:18px;
+  }
+  .hero h1{
+    font-family:'Sora',sans-serif;
+    font-weight:800;
+    font-size:clamp(2.1rem,6vw,3.5rem);
+    line-height:1.04;letter-spacing:-.02em;margin-bottom:14px;
+  }
+  .hero .role{
+    font-size:clamp(1rem,2.6vw,1.25rem);color:#c4ccda;font-weight:500;max-width:620px;
+  }
+  .contacts{
+    display:flex;flex-wrap:wrap;gap:10px;margin-top:28px;
+  }
+  .contacts a{
+    font-size:.86rem;font-weight:500;
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.14);
+    padding:8px 14px;border-radius:999px;
+    transition:.18s;
+    backdrop-filter:blur(6px);
+  }
+  .contacts a:hover{background:rgba(255,255,255,.18);transform:translateY(-1px)}
+
+  /* STATS STRIP */
+  .stats{
+    position:relative;
+    margin:-92px auto 0;
+    display:grid;grid-template-columns:repeat(4,1fr);gap:14px;
+    z-index:3;
+  }
+  .stat{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:20px 18px;box-shadow:var(--shadow);
+  }
+  .stat .num{
+    font-family:'Sora',sans-serif;font-weight:800;font-size:clamp(1.4rem,3.4vw,2.05rem);
+    letter-spacing:-.02em;color:var(--brand-deep);line-height:1;
+  }
+  .stat .lbl{font-size:.78rem;color:var(--muted);margin-top:7px;font-weight:500}
+
+  /* SECTIONS */
+  section{padding:54px 0 0}
+  .sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:22px}
+  .sec-head h2{
+    font-family:'Sora',sans-serif;font-weight:700;font-size:1.4rem;letter-spacing:-.01em;
+  }
+  .sec-head .count{
+    font-size:.8rem;color:var(--muted-soft);font-weight:600;
+    background:#eef1f6;padding:3px 10px;border-radius:999px;
+  }
+  .sec-note{color:var(--muted);font-size:.92rem;margin-bottom:24px;max-width:680px}
+
+  /* FEATURED */
+  .featured{
+    display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:16px;
+  }
+  .fcard{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:22px;box-shadow:var(--shadow);transition:.2s;display:flex;flex-direction:column;
+    position:relative;overflow:hidden;
+  }
+  .fcard:hover{transform:translateY(-3px);box-shadow:var(--shadow-lift);border-color:#d3dcf6}
+  .fcard.hero-card{
+    grid-row:span 2;
+    background:linear-gradient(165deg,#1f3864,#2f5bea);
+    color:#fff;border:none;
+  }
+  .fcard.hero-card .tag{background:rgba(255,255,255,.16);color:#fff}
+  .fcard.hero-card .fdesc{color:#dfe6ff}
+  .fcard.hero-card .metric-row{border-top-color:rgba(255,255,255,.2)}
+  .fcard.hero-card .metric .m-num{color:#fff}
+  .fcard.hero-card .metric .m-lbl{color:#c3cdf5}
+  .tag{
+    align-self:flex-start;font-size:.68rem;font-weight:600;letter-spacing:.06em;
+    text-transform:uppercase;background:#eef1f6;color:var(--muted);
+    padding:4px 10px;border-radius:999px;margin-bottom:14px;
+  }
+  .fcard h3{font-family:'Sora',sans-serif;font-weight:700;font-size:1.18rem;margin-bottom:8px}
+  .fcard.hero-card h3{font-size:1.5rem}
+  .fdesc{color:var(--muted);font-size:.9rem;flex:1}
+  .metric-row{display:flex;gap:22px;margin:18px 0 4px;padding-top:16px;border-top:1px solid var(--line)}
+  .metric .m-num{font-family:'Sora',sans-serif;font-weight:800;font-size:1.45rem;color:var(--brand-deep);line-height:1}
+  .metric .m-lbl{font-size:.72rem;color:var(--muted);margin-top:4px}
+  .links{display:flex;gap:8px;margin-top:16px;flex-wrap:wrap}
+  .links a{
+    font-size:.78rem;font-weight:600;padding:7px 13px;border-radius:9px;
+    border:1px solid var(--line);transition:.16s;
+  }
+  .links a:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .fcard.hero-card .links a{border-color:rgba(255,255,255,.3);color:#fff}
+  .fcard.hero-card .links a:hover{background:#fff;color:var(--brand-deep)}
+
+  /* CATEGORY GRID */
+  .cat{margin-bottom:8px}
+  .cat-title{
+    font-family:'Sora',sans-serif;font-weight:600;font-size:1.02rem;
+    display:flex;align-items:center;gap:10px;margin:30px 0 14px;
+  }
+  .cat-title .dot{width:9px;height:9px;border-radius:3px;background:var(--brand)}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}
+  .app{
+    background:var(--card);border:1px solid var(--line);border-radius:14px;
+    padding:16px 17px;transition:.16s;
+  }
+  .app:hover{border-color:#cdd6ea;box-shadow:var(--shadow);transform:translateY(-2px)}
+  .app .an{font-weight:600;font-size:.96rem;margin-bottom:3px;font-family:'Sora',sans-serif}
+  .app .ad{font-size:.82rem;color:var(--muted);margin-bottom:11px;line-height:1.4}
+  .app .al{display:flex;gap:7px;flex-wrap:wrap}
+  .app .al a{
+    font-size:.72rem;font-weight:600;color:var(--brand);
+    padding:4px 9px;border-radius:7px;background:#eef2ff;transition:.16s;
+  }
+  .app .al a:hover{background:var(--brand);color:#fff}
+  .app .al span.nolink{font-size:.72rem;color:var(--muted-soft);font-style:italic;padding:4px 0}
+
+  /* FOOTER */
+  footer{
+    margin-top:64px;background:var(--ink);color:#fff;padding:46px 0;
+  }
+  footer .fwrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;align-items:center}
+  footer h3{font-family:'Sora',sans-serif;font-weight:700;font-size:1.3rem;margin-bottom:6px}
+  footer p{color:#aab3c2;font-size:.9rem}
+  footer .fcontacts{display:flex;gap:10px;flex-wrap:wrap}
+  footer .fcontacts a{
+    font-size:.85rem;font-weight:600;padding:9px 16px;border-radius:10px;
+    background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.16);transition:.16s;
+  }
+  footer .fcontacts a:hover{background:var(--brand);border-color:var(--brand)}
+
+  @media(max-width:860px){
+    .featured{grid-template-columns:1fr 1fr}
+    .fcard.hero-card{grid-column:span 2;grid-row:auto}
+    .grid{grid-template-columns:1fr 1fr}
+  }
+  @media(max-width:620px){
+    header.hero{padding:48px 0 110px}
+    .stats{grid-template-columns:1fr 1fr;gap:11px}
+    .featured{grid-template-columns:1fr}
+    .fcard.hero-card{grid-column:auto}
+    .grid{grid-template-columns:1fr}
+    .sec-head{flex-direction:row;align-items:center}
+    footer .fwrap{flex-direction:column;align-items:flex-start}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Senior Flutter / Mobile Developer</div>
+    <h1>Mohamed Ahmed<br>Abdel Aty</h1>
+    <p class="role">6+ years building and publishing 35+ cross-platform apps for iOS and Android — from nationwide ticketing platforms and government systems to e-commerce, POS, and booking products.</p>
+    <div class="contacts">
+      <a href="mailto:m.abdaty1995@gmail.com">✉ m.abdaty1995@gmail.com</a>
+      <a href="tel:+201024016422">☎ +20 102 401 6422</a>
+      <a href="https://www.linkedin.com/in/aty99/" target="_blank" rel="noopener">in / aty99</a>
+      <a href="https://github.com/aty99" target="_blank" rel="noopener">github / aty99</a>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="stats">
+    <div class="stat"><div class="num">6+</div><div class="lbl">Years of experience</div></div>
+    <div class="stat"><div class="num">35+</div><div class="lbl">Published apps</div></div>
+    <div class="stat"><div class="num">30M+</div><div class="lbl">Downloads (TicketMX)</div></div>
+    <div class="stat"><div class="num">100M+</div><div class="lbl">Tickets booked</div></div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <!-- FEATURED -->
+  <section id="featured">
+    <div class="sec-head">
+      <h2>Featured Work</h2>
+    </div>
+    <div class="featured">
+      <div class="fcard hero-card">
+        <span class="tag">Ticketing · Saudi Arabia</span>
+        <h3>TicketMX</h3>
+        <p class="fdesc">One of Saudi Arabia's largest ticketing platforms, powering Riyadh &amp; Jeddah seasons with live seat selection, interactive venue maps, an in-app wallet, multiple payment methods, and gate scanning.</p>
+        <div class="metric-row">
+          <div class="metric"><div class="m-num">30M+</div><div class="m-lbl">Downloads</div></div>
+          <div class="metric"><div class="m-num">100M+</div><div class="m-lbl">Tickets booked</div></div>
+        </div>
+        <div class="links">
+          <a href="https://apps.apple.com/app/ticketmx/id1537318373" target="_blank" rel="noopener">App Store</a>
+          <a href="https://play.google.com/store/apps/details?id=sela.sa.ticketmx" target="_blank" rel="noopener">Google Play</a>
+        </div>
+      </div>
+
+      <div class="fcard">
+        <span class="tag">Government</span>
+        <h3>SaudiTickets</h3>
+        <p class="fdesc">Match-booking platform built for the Saudi Ministry of Sports.</p>
+        <div class="links">
+          <a href="https://apps.apple.com/app/sauditickets/id1541120803" target="_blank" rel="noopener">App Store</a>
+          <a href="https://play.google.com/store/apps/details?id=sa.sela.sauditickets" target="_blank" rel="noopener">Google Play</a>
+        </div>
+      </div>
+
+      <div class="fcard">
+        <span class="tag">Super App</span>
+        <h3>Sela Super App</h3>
+        <p class="fdesc">A comprehensive super app integrating event booking, logistics, and services for the Saudi market.</p>
+        <div class="links">
+          <a href="https://apps.apple.com/eg/app/sela-super-app/id6504908987" target="_blank" rel="noopener">App Store</a>
+          <a href="https://play.google.com/store/apps/details?id=sa.sela.superapp" target="_blank" rel="noopener">Google Play</a>
+        </div>
+      </div>
+
+      <div class="fcard">
+        <span class="tag">Government · Events</span>
+        <h3>Hajj Expo</h3>
+        <p class="fdesc">Conference and exhibition app for the Ministry of Hajj &amp; Umrah.</p>
+        <div class="links">
+          <a href="https://apps.apple.com/eg/app/hajj-expo/id6753938620" target="_blank" rel="noopener">App Store</a>
+          <a href="https://play.google.com/store/apps/details?id=sa.sela.HajjExpo" target="_blank" rel="noopener">Google Play</a>
+        </div>
+      </div>
+
+      <div class="fcard">
+        <span class="tag">POS</span>
+        <h3>Smile POS</h3>
+        <p class="fdesc">Full POS system managing sales, employees, customer engagement, and receipt printing.</p>
+        <div class="links"><span style="font-size:.78rem;color:var(--muted-soft);font-style:italic">Internal / enterprise deployment</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ALL APPS BY CATEGORY -->
+  <section id="all">
+    <div class="sec-head">
+      <h2>Full Portfolio</h2>
+      <span class="count">35+ apps</span>
+    </div>
+    <p class="sec-note">Complete catalogue of published applications, grouped by domain. Links open the App Store or Google Play listing.</p>
+
+    <!-- TICKETING -->
+    <div class="cat">
+      <div class="cat-title"><span class="dot"></span>Ticketing, Events &amp; Booking</div>
+      <div class="grid">
+        <div class="app"><div class="an">S-Photo</div><div class="ad">Booking events and celebrity photos.</div><div class="al"><a href="https://apps.apple.com/eg/app/sphoto-%D8%A7%D8%B3-%D9%81%D9%88%D8%AA%D9%88/id6746163624" target="_blank" rel="noopener">iOS</a><a href="https://play.google.com/store/apps/details?id=com.baramjk.sphotocustomer" target="_blank" rel="noopener">Android</a></div></div>
+        <div class="app"><div class="an">BBT RedTown</div><div class="ad">Event booking app in Kuwait.</div><div class="al"><a href="https://play.google.com/store/apps/details?id=com.baramjk.bbt" target="_blank" rel="noopener">Android</a></div></div>
+        <div class="app"><div class="an">Slots</div><div class="ad">Barbershop booking system, with admin app for stores &amp; vendors.</div><div class="al"><a href="https://apps.apple.com/eg/app/slotskw/id6469031888" target="_blank" rel="noopener">iOS</a></div></div>
+        <div class="app"><div class="an">Ghaslah</div><div class="ad">Car-wash booking service, with admin app for orders &amp; workers.</div><div class="al"><a href="https://play.google.com/store/apps/details?id=com.baramjk.ghaslah" target="_blank" rel="noopener">Android</a><a href="https://apps.apple.com/eg/app/ghaslahkw-admin/id6476490376" target="_blank" rel="noopener">Admin</a></div></div>
+        <div class="app"><div class="an">4x4</div><div class="ad">Cars marketplace and booking app.</div><div class="al"><a href="https://apps.apple.com/app/4x4kw/id6739775969" target="_blank" rel="noopener">iOS</a></div></div>
+        <div class="app"><div class="an">Glamour Gym</div><div class="ad">Fitness meals and gym bookings management.</div><div class="al"><a href="https://apps.apple.com/app/glamor/id6479636026" target="_blank" rel="noopener">iOS</a></div></div>
+      </div>
+    </div>
+
+    <!-- ECOMMERCE -->
+    <div class="cat">
+      <div class="cat-title"><span class="dot"></span>E-commerce &amp; Marketplace</div>
+      <div class="grid">
+        <div class="app"><div class="an">Vecasa</div><div class="ad">Cross-platform e-commerce app.</div><div class="al"><a href="https://apps.apple.com/app/vecasa/id6479958495" target="_blank" rel="noopener">iOS</a></div></div>
+        <div class="app"><div class="an">Alsalman</div><div class="ad">Multi-vendor e-commerce platform.</div><div class="al"><a href="https://play.google.com/store/apps/details?id=com.baramjk.alsalman" target="_blank" rel="noopener">Store</a></div></div>
+        <div class="app"><div class="an">Livi</div><div class="ad">Furniture e-commerce.</div><div class="al"><a href="https://play.google.com/store/apps/details?id=com.baramjk.livi" target="_blank" rel="noopener">Store</a></div></div>
+        <div class="app"><div class="an">Melocana</div><div class="ad">Rattan furniture e-commerce.</div><div class="al"><a href="https://apps.apple.com/eg/app/melocanna/id6502879449" target="_blank" rel="noopener">iOS</a></div></div>
+        <div class="app"><div class="an">RAZZA</div><div class="ad">Fashion e-commerce app.</div><div class="al"><a href="https://apps.apple.com/eg/app/razza-app/id6449197678" target="_blank" rel="noopener">iOS</a></div></div>
+        <div class="app"><div class="an">Morgap</div><div class="ad">Global e-commerce platform.</div><div class="al"><a href="https://apps.apple.com/eg/app/morgap/id1482283063" target="_blank" rel="noopener">iOS</a></div></div>
+        <div class="app"><div class="an">Soor</div><div class="ad">Building-materials marketplace.</div><div class="al"><a href="https://apps.apple.com/app/soor-kw/id6741811000" target="_blank" rel="noopener">iOS</a></div></div>
+        <div class="app"><div class="an">Al Mulla Farms</div><div class="ad">Farm-products ordering app.</div><div class="al"><a href="https://apps.apple.com/app/almulla-farms/id6740340980" target="_blank" rel="noopener">iOS</a></div></div>
+        <div class="app"><div class="an">Montajat</div><div class="ad">Cooperative-society marketplace.</div><div class="al"><a href="https://apps.apple.com/eg/app/montajat-app/id6737238922" target="_blank" rel="noopener">iOS</a></div></div>
+        <div class="app"><div class="an">Baqqah</div><div class="ad">Order &amp; deliver flowers and plants across countries.</div><div class="al"><a href="https://apps.apple.com/eg/app/baqah-flowers-plants/id6447472404" target="_blank" rel="noopener">iOS</a></div></div>
+        <div class="app"><div class="an">Jarra KW</div><div class="ad">Custom jars and gifts.</div><div class="al"><a href="https://apps.apple.com/eg/app/jarra-kw/id1610374466" target="_blank" rel="noopener">iOS</a></div></div>
+        <div class="app"><div class="an">Lady In</div><div class="ad">Daily flash deals e-commerce.</div><div class="al"><a href="https://apps.apple.com/eg/app/lady-in/id1669972610" target="_blank" rel="noopener">iOS</a></div></div>
+        <div class="app"><div class="an">Dewan</div><div class="ad">E-commerce platform.</div><div class="al"><a href="https://apps.apple.com/app/dewan-al-dahab/id1550114133" target="_blank" rel="noopener">iOS</a><a href="https://play.google.com/store/apps/details?id=com.dewanaldahab.dewanaldahab" target="_blank" rel="noopener">Android</a></div></div>
+      </div>
+    </div>
+
+    <!-- POS -->
+    <div class="cat">
+      <div class="cat-title"><span class="dot"></span>POS &amp; Business</div>
+      <div class="grid">
+        <div class="app"><div class="an">PosMX</div><div class="ad">POS system managing sales, employees, and revenue growth.</div><div class="al"><a href="https://apps.apple.com/us/app/posmx/id1640485129" target="_blank" rel="noopener">iOS</a><a href="https://play.google.com/store/apps/details?id=sa.sela.posmx" target="_blank" rel="noopener">Android</a></div></div>
+        <div class="app"><div class="an">ATMETA</div><div class="ad">Invoicing and daily accounting for business owners.</div><div class="al"><a href="https://apps.apple.com/eg/app/atmeta/id6737435318" target="_blank" rel="noopener">iOS</a></div></div>
+        <div class="app"><div class="an">Smile</div><div class="ad">NopCommerce-based commerce app.</div><div class="al"><a href="https://apps.apple.com/eg/app/smile-kw/id6667118019" target="_blank" rel="noopener">iOS</a></div></div>
+      </div>
+    </div>
+
+    <!-- LOGISTICS / GOV -->
+    <div class="cat">
+      <div class="cat-title"><span class="dot"></span>Logistics &amp; Government</div>
+      <div class="grid">
+        <div class="app"><div class="an">LogiMX</div><div class="ad">Logistics app connecting vendors with logistics departments.</div><div class="al"><a href="https://apps.apple.com/app/logimx/id1538638069" target="_blank" rel="noopener">iOS</a><a href="https://play.google.com/store/apps/details?id=sa.sela.logimx" target="_blank" rel="noopener">Android</a></div></div>
+        <div class="app"><div class="an">Al Moasser</div><div class="ad">Offline-capable courier app for school &amp; student order delivery.</div><div class="al"><span class="nolink">Enterprise deployment</span></div></div>
+        <div class="app"><div class="an">Truckar</div><div class="ad">App for truck drivers to review shipment requests.</div><div class="al"><a href="https://apps.apple.com/app/truckar-driver/id1594640952" target="_blank" rel="noopener">iOS</a><a href="https://play.google.com/store/apps/details?id=com.seoera.truckar" target="_blank" rel="noopener">Android</a></div></div>
+      </div>
+    </div>
+
+    <!-- SCANNERS -->
+    <div class="cat">
+      <div class="cat-title"><span class="dot"></span>Hardware-Integrated Scanners</div>
+      <div class="grid">
+        <div class="app"><div class="an">TicketMX Scanner</div><div class="ad">Gate ticket scanning — Honeywell, SaveoBolt, Bluebird laser &amp; QR.</div><div class="al"><a href="https://apps.apple.com/app/ticketmx-scanner/id1557623045" target="_blank" rel="noopener">iOS</a><a href="https://play.google.com/store/apps/details?id=sela.sa.ticketmxscanner" target="_blank" rel="noopener">Android</a></div></div>
+        <div class="app"><div class="an">AccreditMX</div><div class="ad">Scans user accreditations for verification.</div><div class="al"><a href="https://apps.apple.com/app/accreditmx-scanner/id1564633701" target="_blank" rel="noopener">iOS</a><a href="https://play.google.com/store/apps/details?id=sa.sela.accreditmxscanner" target="_blank" rel="noopener">Android</a></div></div>
+        <div class="app"><div class="an">Access Badge</div><div class="ad">Secure access-badge scanning for events and venues.</div><div class="al"><a href="https://apps.apple.com/eg/app/accessbadge-scanner/id6642705800" target="_blank" rel="noopener">iOS</a><a href="https://play.google.com/store/apps/details?id=com.sparksys.accessBadge_scanner" target="_blank" rel="noopener">Android</a></div></div>
+        <div class="app"><div class="an">S-Photo Scanner</div><div class="ad">Ticket scanning &amp; receipt printing — IMIN, laser &amp; QR.</div><div class="al"><span class="nolink">Enterprise deployment</span></div></div>
+        <div class="app"><div class="an">MFA Scanner</div><div class="ad">Security QR scanning for the Egyptian Ministry of Foreign Affairs.</div><div class="al"><span class="nolink">Government deployment</span></div></div>
+      </div>
+    </div>
+
+    <!-- LEARNING / OTHER -->
+    <div class="cat">
+      <div class="cat-title"><span class="dot"></span>Education &amp; Other</div>
+      <div class="grid">
+        <div class="app"><div class="an">PM Tricks</div><div class="ad">Exam prep for PMP, PMI-RMP &amp; PMI-SP (20K+ downloads).</div><div class="al"><a href="https://apps.apple.com/eg/app/pm-tricks/id1593204755" target="_blank" rel="noopener">iOS</a><a href="https://play.google.com/store/apps/details?id=com.pm.pm_trickes&hl=en" target="_blank" rel="noopener">Android</a></div></div>
+        <div class="app"><div class="an">U-pick</div><div class="ad">Health tips and meals app.</div><div class="al"><a href="https://apps.apple.com/eg/app/upick-%D9%8A%D9%88%D8%A8%D9%83/id6446490838" target="_blank" rel="noopener">iOS</a></div></div>
+        <div class="app"><div class="an">Falta</div><div class="ad">Trivia game.</div><div class="al"><a href="https://apps.apple.com/eg/app/falta-%D9%81%D9%84%D8%AA%D9%87/id6743669553" target="_blank" rel="noopener">iOS</a><a href="https://play.google.com/store/apps/details?id=com.baramjk.falta" target="_blank" rel="noopener">Android</a></div></div>
+      </div>
+    </div>
+
+  </section>
+</div>
+
+<footer>
+  <div class="wrap fwrap">
+    <div>
+      <h3>Let's build something</h3>
+      <p>Open to senior Flutter / mobile roles — remote or on-site.</p>
+    </div>
+    <div class="fcontacts">
+      <a href="mailto:m.abdaty1995@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/aty99/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/aty99" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
